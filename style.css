@@ -1,0 +1,46 @@
+/*----graph-----*/
+.node circle {
+  fill: #fff;
+  stroke-width: 3px;
+}
+
+.node text {
+  font:12px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke:#ccc;
+  stroke-width: 2px;
+}
+
+/*----nav-----*/
+.nav-wrapper {
+  background-color: darkseagreen;
+}
+
+.nav-text {
+  color: darkslategray;
+}
+
+.btn {
+  background-color: skyblue;
+  margin-left: 15px;
+}
+
+.btn:hover {
+  background-color: paleturquoise;
+}
+
+/*----modal-----*/
+.modal {
+  color: darkslategray;
+}
+
+.modal a {
+  color: skyblue;
+}
+
+.modal-action {
+  margin-left: 15px;
+}
