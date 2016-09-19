@@ -44,3 +44,21 @@
 .modal-action {
   margin-left: 15px;
 }
+
+/*---------main----------*/
+main {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.graph {
+  flex: 1;
+}
+
+.updates {
+  flex: 1;
+}
+
+.otherDAGS {
+  width: 100%;
+}
