@@ -1,11 +1,19 @@
 angular.module('app')
     .directive('d3graph', function() {
         return {
-            restrict: 'EA',
+            restrict: 'AE',
             scope: {
                 val: '=',
             },
-            link: function(scope, element, attrs) {
+            link: function(scope, element) {
+                scope.$watch('val', function(newVal, oldVal) {
+
+                    // clear the elements inside of the directive
+                    svg.selectAll('*').remove();
+                    if (!newVal) {
+                        return;
+                    }
+                })
 
                 var margin = {
                         top: 50,
@@ -34,12 +42,17 @@ angular.module('app')
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")rotate(90)");
 
                 //console.log(treeData[0]);
-                console.log(scope.val[0]);
                 root = scope.val[0];
 
+                update(root);
+
+                function update(source) {
+                    console.log(root);
                     // Compute the new tree layout.
                     var nodes = tree.nodes(root).reverse(),
                         links = tree.links(nodes);
+
+                        console.log(nodes)
 
                     // Normalize for fixed-depth.
                     nodes.forEach(function(d) {
@@ -51,18 +64,23 @@ angular.module('app')
                         .data(nodes, function(d) {
                             return d.id || (d.id = ++i);
                         });
+                    console.log(node);
 
                     // Enter the nodes.
                     var nodeEnter = node.enter().append("g")
                         .attr("class", "node")
                         .attr("transform", function(d) {
+                          console.log(d.y, d.x);
                             return "translate(" + d.y + "," + d.x + ")";
                         });
+
+                   console.log(nodeEnter);
 
                     //original
                     nodeEnter.append("circle")
                         .attr("r", 25)
                         .style("stroke", function(d) {
+                            console.log(d.status)
                             return d.status;
                         });
 
@@ -95,15 +113,7 @@ angular.module('app')
                         })
                         .attr("d", diagonal);
 
-                scope.$watch('val', function(newVal, oldVal) {
-
-                    // clear the elements inside of the directive
-                    svg.selectAll('*').remove();
-                    if (!newVal) {
-                        return;
-                    }
-                })
-                return svg;
+                }
             }
         }
     })

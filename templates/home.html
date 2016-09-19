@@ -1,6 +1,6 @@
-<main>
-  <div class="graph" ng-controller="graphController">
-    <h1>DAG TITLE</h1>
+<!-- <main>
+  <h1>DAG TITLE</h1>
+  <div ng-controller="graphController">
     <d3graph val="treeData"></d3graph>
   </div>
   <aside class="updates">
@@ -8,5 +8,20 @@
   </aside>
   <section class="otherDAGS">
     <h2>Other Running Dags</h2>
+  </section>
+</main> -->
+<main>
+  <section class="graph">
+    <h1>DAG TITLE</h1>
+    <div class="forSVG"></div>
+  </section>
+  <aside class="updates">
+    <h2>DAG Status updates</h2>
+    <h4>NODE 4 error at 15%, could not complete!</h4>
+  </aside>
+  <section class="otherDAGS">
+    <h2>Other Running Dags</h2>
+    <h3><a href="#">|Other DAG 1|                          |</a><a href="#">Other DAG 1|</a></h3>
+
   </section>
 </main>
