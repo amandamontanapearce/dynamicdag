@@ -1,34 +1,57 @@
+(function(){
 angular
     .module('app')
-    .controller('homeController', ['$scope', '$state', function($scope, $state) {
+    .controller('homeController', homeController);
+    homeController.$inject = ['$scope', '$state', '$stateParams', 'factory'];
+    function homeController($scope, $state, $stateParams, factory) {
+        var newTree = [];
+        var obj;
+        var treeId = $stateParams.id;
+        console.log(treeId);
+        function getTreeStructure(array){
+        factory.getTreeStructure(treeId)
+        .then( function(data){
+          var obj = data.data;
+          obj["parent"] = 'null';
+          obj["completion"] = 0;
+          if (obj.completion == 0) {
+          obj["status"] = "skyblue";
+        }
+          newTree.push(obj);
+        })
+      }
+      getTreeStructure(newTree);
+
+      console.log(newTree);
+
+
+
+        // newTree.push($scope.data);
+        // console.log(newTree);
 
         var treeData = [{
-            "name": "1",
+            "id": "1",
             "completion": 0,
             "parent": "null",
-            "value": 10,
             "status": "skyblue",
             "children": [{
-                "name": "2",
+                "id": "2",
                 "completion": 0,
                 "parent": "Top Level",
-                "value": 15,
                 "status": "skyblue",
                 "children": [{
-                    "name": "4",
+                    "id": "4",
                     "completion": 100,
                     "parent": "Level 2: A",
-                    "value": 5,
                     "status": "darkseagreen",
                 }, {
-                    "name": "5",
+                    "id": "5",
                     "completion": 85,
                     "parent": "Level 2: A",
-                    "value": 8,
                     "status": "darkseagreen",
                 }]
             }, {
-                "name": "3",
+                "id": "3",
                 "completion": 15,
                 "parent": "Top Level",
                 "value": 10,
@@ -130,15 +153,16 @@ angular
 
 
         // socket.on('init', function (data) {
-        //     // $scope.name = data.name;
+        //     // $scope.id = data.id;
         //     // $scope.users = data.users;
         //   });
         // socket.on('user:join', function (data) {
         //       // $scope.messages.push({
         //       //   user: 'chatroom',
-        //       //   text: 'User ' + data.name + ' has joined.'
+        //       //   text: 'User ' + data.id + ' has joined.'
         //       // });
-        //       // $scope.users.push(data.name);
+        //       // $scope.users.push(data.id);
         //     });
         //$scope.modalTrigger = function () { $('#modal1').openModal() }
-    }]);
+    };
+  })();

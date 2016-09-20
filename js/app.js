@@ -1,13 +1,16 @@
 angular
-  .module('app', [ 'ui.router', 'ui.materialize', 'socket.io'])
-  .config(function($stateProvider, $urlRouterProvider, $locationProvider, $socketProvider) {
-    $socketProvider.setConnectionUrl('http://localhost:3000');
-
+  .module('app', [ 'ui.router', 'ui.materialize'])
+  .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise("/");
 
     $stateProvider
-    .state('home', {
+    .state('start', {
       url:'/',
+      controller: "startController",
+      templateUrl: "templates/start.html"
+    })
+    .state('home', {
+      url:'/home/:id',
       controller: "homeController",
       templateUrl: "templates/home.html"
     })
