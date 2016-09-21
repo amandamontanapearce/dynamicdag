@@ -1,5 +1,7 @@
 var sock = new SockJS('http://localhost:3000/chat');
-//var sock = new SockJS('http://localhost:8080/dag/dagstatus')
+// var sock = new SockJS('http://localhost:8080/dag-server/dag/dagstatus');
+// var url = "ws://localhost:61614/stomp";
+// var client = Stomp.client(url);
 angular
   .module('app')
   .controller('socketController', function socketController($scope) {

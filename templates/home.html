@@ -11,6 +11,15 @@
   </section>
 </main> -->
 <main>
+  <div ng-controller="socketController">
+    <ul>
+          <li ng-repeat="message in messages">{{message}}</li>
+      </ul>
+      <!-- <form ng-submit="sendMessage()">
+          <input type="text" ng-model="messageText" placeholder="Type your message here" />
+          <input type="submit" value="Send" />
+      </form -->
+  </div>
   <section class="graph">
     <h1>DAG 1</h1>
     <div class="forSVG"></div>
