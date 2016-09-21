@@ -1,5 +1,6 @@
 
-  var sock = new SockJS('https://stark-mountain-64311.herokuapp.com/chat');
+  //var sock = new SockJS('https://stark-mountain-64311.herokuapp.com/chat');
+ var sock = new SockJS('http://localhost:3000/chat');
 angular
     .module('app')
     .controller('homeController', homeController);
@@ -33,10 +34,10 @@ angular
           .attr("height", height + margin.top + margin.bottom)
           .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")rotate(90)");
-      $scope.sendMessage = function() {
-              //sock.send($scope.messageText);
-              //$scope.messageText = "";
-          };
+      // $scope.sendMessage = function() {
+      //         //sock.send($scope.messageText);
+      //         //$scope.messageText = "";
+      //     };
 
 
           sock.onmessage = function(e) {
@@ -47,7 +48,7 @@ angular
               $scope.$apply();
 
     //  var obj;
-          console.log($scope.messages);
+          console.log($scope.messages[0].children[1].status);
       //   function getTreeStructure(array){
       //   factory.getTreeStructure(treeId)
       //   .then( function(data){
@@ -126,7 +127,6 @@ angular
         //     .attr("height", height + margin.top + margin.bottom)
         //     .append("g")
         //     .attr("transform", "translate(" + margin.left + "," + margin.top + ")rotate(90)");
-
         root = $scope.messages[0];
         console.log(root);
 
