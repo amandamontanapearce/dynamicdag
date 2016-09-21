@@ -1,0 +1,37 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/Cellar/node/5.10.1/bin/node /usr/local/bin/firebase deploy
+[debug] CLI Version:  3.0.6
+[debug] Platform:     darwin
+[debug] Node Version: v5.10.1
+[debug] Time:         Wed Sep 21 2016 08:37:09 GMT-0600 (MDT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/dynamicdags 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/dynamicdags/tokens 
+[debug] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'dynamicdags'...
+[info] 
+[info] i  deploying database, hosting
+[info] ✔  database: rules ready to deploy.
+[info] i  hosting: preparing . directory for upload...
+[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/dynamicdags/uploads/-KSCARwilaQ0ceLXdv53?fileCount=127&message= 
+[error] 
+[error] Error: File upload failed: Storage error. Please try again. Failed to upload file "DynamicDAG/.git/config": Invalid Credentials
+[debug] Error Context: {
+  "duration": 630,
+  "fileCount": 61,
+  "ip": "128.177.113.102",
+  "start": 1474468631822,
+  "status": "failed",
+  "statusMessage": "Storage error. Please try again. Failed to upload file \"DynamicDAG/.git/config\": Invalid Credentials",
+  "uid": "108800516583398437209",
+  "uploadedCount": 0,
+  "user": {
+    "email": "amandamontanapearce@gmail.com",
+    "gaiaId": "108800516583398437209",
+    "image": "https://lh6.googleusercontent.com/-MkyKSGrJZNM/AAAAAAAAAAI/AAAAAAAACjs/ftil4ri3Tag/photo.jpg"
+  }
+}
