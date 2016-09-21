@@ -1,4 +1,4 @@
-(function(){
+
   var sock = new SockJS('https://stark-mountain-64311.herokuapp.com/chat');
 angular
     .module('app')
@@ -207,4 +207,3 @@ angular
         //     });
         //$scope.modalTrigger = function () { $('#modal1').openModal() }
     };
-  })();
