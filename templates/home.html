@@ -1,36 +1,22 @@
-<!-- <main>
-  <h1>DAG TITLE</h1>
-  <div ng-controller="graphController">
-    <d3graph val="treeData"></d3graph>
-  </div>
-  <aside class="updates">
-    <h2>DAG Status updates</h2>
-  </aside>
-  <section class="otherDAGS">
-    <h2>Other Running Dags</h2>
-  </section>
-</main> -->
 <main>
-  <div ng-controller="socketController">
-    <ul>
-          <li ng-repeat="message in messages">{{message}}</li>
-      </ul>
-      <!-- <form ng-submit="sendMessage()">
-          <input type="text" ng-model="messageText" placeholder="Type your message here" />
-          <input type="submit" value="Send" />
-      </form -->
   </div>
   <section class="graph">
-    <h1>DAG 1</h1>
+    <h3>Syntactic XML Compression of DataSet C</h3>
     <div class="forSVG"></div>
   </section>
   <aside class="updates">
-    <h2>DAG Status updates</h2>
-    <h4>NODE 4 error at 15%, could not complete!</h4>
+    <h3>DAG Status updates</h3>
+    <div class="updatesBox" >
+      <h5>Nodes 2, 4, and 5 are in progress</h5>
+      <h5>Nodes 1 and 3 are queue</h5>
+      <h5 ng-show="show" >Node 3 Error at 15% complete. Error message: wrong data type.</h5>
+    </div>
   </aside>
   <section class="otherDAGS">
-    <h2>Other Running Dags</h2>
-    <h3><a href="#">|DAG 2|                          |</a><a href="#">DAG 3|</a></h3>
-
+    <h3>Other Running Dags:</h3>
+    <div class="otherLinks">
+      <a href="#">Syntactic XML Compression of DataSet B</a>
+      <a href="#">Syntactic XML Compression of DataSet D</a>
+    </div>
   </section>
 </main>

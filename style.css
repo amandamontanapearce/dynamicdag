@@ -32,17 +32,8 @@
   background-color: paleturquoise;
 }
 
-/*----modal-----*/
-.modal {
-  color: darkslategray;
-}
-
-.modal a {
-  color: skyblue;
-}
-
-.modal-action {
-  margin-left: 15px;
+.brand-logo {
+  margin-left: 10px;
 }
 
 /*---------main----------*/
@@ -52,13 +43,54 @@ main {
 }
 
 .graph {
-  flex: 1;
+  flex: 2;
+  margin: 2%;
+  margin-left: 10%;
+}
+
+.graph h3 {
+  width: 100%;
 }
 
 .updates {
   flex: 1;
+  margin: 10% 10% 5% 2%;
+}
+
+.updatesBox {
+  border: 2px solid darkslategray;
+  padding: 2%;
+}
+
+
+svg {
+  box-shadow: 20px 1px 20px darkslategray;
 }
 
 .otherDAGS {
   width: 100%;
+  padding: 4%;
+
+}
+
+.otherLinks a {
+  margin: 3%;
+}
+
+
+/*---------start----------*/
+
+.start {
+  display: inline;
+  margin: 10px;
+}
+
+/*---------footer----------*/
+
+div.footer-copyright {
+  background-color: darkseagreen !important;
+}
+
+footer.page-footer {
+  background-color: skyblue !important;
 }
